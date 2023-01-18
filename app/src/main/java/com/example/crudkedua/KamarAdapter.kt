@@ -24,6 +24,12 @@ class KamarAdapter(private val kamars: ArrayList<Kamar>, private val listener: O
         holder.view.text_kamar.setOnClickListener{
             listener.onClick( kamars )
         }
+        holder.view.icon_delete.setOnClickListener {
+            listener.aDelete(kamars)
+        }
+        holder.view.icon_edit.setOnClickListener {
+            listener.aUpdate(kamars)
+        }
     }
 
 
@@ -38,6 +44,8 @@ class KamarAdapter(private val kamars: ArrayList<Kamar>, private val listener: O
 
     interface OnAdapterListener{
         fun onClick(kamar: Kamar)
+        fun aDelete(kamar: Kamar)
+        fun aUpdate(kamar: Kamar)
     }
 
 

@@ -44,9 +44,14 @@ class EditKamar : AppCompatActivity() {
         val intentType = intent.getIntExtra("intent_type",0)
         when(intentType){
             Helper.TYPE_CREATE->{
-
+                button_update.visibility = View.GONE
             }
             Helper.TYPE_READ->{
+                button_save.visibility = View.GONE
+                button_update.visibility = View.GONE
+                getKamar()
+            }
+            Helper.TYPE_UPDATE->{
                 button_save.visibility = View.GONE
                 getKamar()
             }
@@ -58,6 +63,24 @@ class EditKamar : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 db.kamarDao().addKamar(
                     Kamar(0,edit_namaKamar.text.toString(),edit_namaPemesan.text.toString(),edit_food.text.toString(),edit_drink.text.toString())
+                )
+                db.userDao().updateUser(
+                    User(edit_namaPemesan.text.toString())
+                )
+                db.foodDao().updateFood(
+                    Food(edit_food.text.toString())
+                )
+                db.drinkDao().updateDrink(
+                    Drink(edit_food.text.toString())
+                )
+                finish()
+            }
+        }
+
+        button_update.setOnClickListener{
+            CoroutineScope(Dispatchers.IO).launch {
+                db.kamarDao().updateKamar(
+                    Kamar(kamarId,edit_namaKamar.text.toString(),edit_namaPemesan.text.toString(),edit_food.text.toString(),edit_drink.text.toString())
                 )
                 db.userDao().addUser(
                     User(edit_namaPemesan.text.toString())

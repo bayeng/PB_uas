@@ -22,7 +22,7 @@ interface KamarDao {
     @Delete
     fun deleteKamar(kamar: Kamar)
 
-    @Query("SELECT * FROM kamar ")
+    @Query("SELECT * FROM kamar ORDER BY kamarId DESC")
     fun getKamars(): List<Kamar>
 
     @Transaction

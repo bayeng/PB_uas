@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        loadDataKamar()
+    }
+
+    fun loadDataKamar(){
         CoroutineScope(Dispatchers.IO).launch {
             val kamars= db.kamarDao().getKamars()
             Log.d("MainActivity","dbResponse: $kamars")
@@ -66,6 +70,17 @@ class MainActivity : AppCompatActivity() {
         kamarAdapter = KamarAdapter(arrayListOf(), object :KamarAdapter.OnAdapterListener{
             override fun onClick(kamar: Kamar) {
                 intentEdit(kamar.kamarId, Helper.TYPE_READ)
+            }
+
+            override fun aDelete(kamar: Kamar) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val kamars= db.kamarDao().deleteKamar(kamar)
+                    loadDataKamar()
+                }
+            }
+
+            override fun aUpdate(kamar: Kamar) {
+                intentEdit(kamar.kamarId,Helper.TYPE_UPDATE)
             }
 
         })
