@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_create.xml" value="0.2015" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.135" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_ukamar.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_user_nkamar.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/adapter_kamar.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/adapter_uk.xml" value="0.164021164021164" />
         <entry key="app/src/main/res/layout/adapter_user.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/kamar_edit.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/kamar_edit.xml" value="0.33" />
       </map>
     </option>
   </component>

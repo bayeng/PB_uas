@@ -34,6 +34,10 @@ class UserAdapter(private val users: ArrayList<User>): RecyclerView.Adapter<User
         notifyDataSetChanged()
     }
 
+    interface UserAdapter{
+       fun onClick(kamar: Kamar)
+    }
+
 
 
 }

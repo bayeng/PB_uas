@@ -34,7 +34,7 @@ abstract class HotelDB : RoomDatabase(){
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
             HotelDB::class.java,
-            "hotel123.db"
+            "hotel1234.db"
         ).build()
 
     }

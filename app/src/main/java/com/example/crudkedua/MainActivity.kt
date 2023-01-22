@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun userListener(){
-        button_makanan.setOnClickListener{
+        button_list.setOnClickListener{
             startActivity(Intent(this,UserActivity::class.java))
         }
     }

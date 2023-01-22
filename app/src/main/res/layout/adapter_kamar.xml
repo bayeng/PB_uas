@@ -7,11 +7,11 @@
     android:padding="20dp">
 
 
-    <TextView
+    <Button
         android:id="@+id/text_kamar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Nanti kita cerita hari ini"
+        tools:text="data kamar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

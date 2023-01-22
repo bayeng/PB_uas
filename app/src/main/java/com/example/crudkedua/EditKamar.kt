@@ -9,6 +9,7 @@ import com.example.crudkedua.entities.Food
 import com.example.crudkedua.entities.Kamar
 import com.example.crudkedua.entities.User
 import com.example.crudkedua.helper.Helper
+import kotlinx.android.synthetic.main.adapter_user.*
 import kotlinx.android.synthetic.main.kamar_edit.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -53,6 +54,7 @@ class EditKamar : AppCompatActivity() {
             }
             Helper.TYPE_UPDATE->{
                 button_save.visibility = View.GONE
+                edit_namaPemesan.visibility = View.GONE
                 getKamar()
             }
         }
@@ -64,13 +66,13 @@ class EditKamar : AppCompatActivity() {
                 db.kamarDao().addKamar(
                     Kamar(0,edit_namaKamar.text.toString(),edit_namaPemesan.text.toString(),edit_food.text.toString(),edit_drink.text.toString())
                 )
-                db.userDao().updateUser(
+                db.userDao().addUser(
                     User(edit_namaPemesan.text.toString())
                 )
-                db.foodDao().updateFood(
+                db.foodDao().addFood(
                     Food(edit_food.text.toString())
                 )
-                db.drinkDao().updateDrink(
+                db.drinkDao().addDrink(
                     Drink(edit_food.text.toString())
                 )
                 finish()
@@ -82,13 +84,13 @@ class EditKamar : AppCompatActivity() {
                 db.kamarDao().updateKamar(
                     Kamar(kamarId,edit_namaKamar.text.toString(),edit_namaPemesan.text.toString(),edit_food.text.toString(),edit_drink.text.toString())
                 )
-                db.userDao().addUser(
+                db.userDao().updateUser(
                     User(edit_namaPemesan.text.toString())
                 )
-                db.foodDao().addFood(
+                db.foodDao().updateFood(
                     Food(edit_food.text.toString())
                 )
-                db.drinkDao().addDrink(
+                db.drinkDao().updateDrink(
                     Drink(edit_food.text.toString())
                 )
                 finish()
