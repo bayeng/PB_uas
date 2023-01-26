@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     fun kamarListener(){
         button_create.setOnClickListener{
-          intentEdit(0,Helper.TYPE_CREATE)
+            startActivity(Intent(this,PesanKamar::class.java))
         }
     }
 
@@ -56,7 +56,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    fun intentCreate(kamarId: Int, intentType: Int) {
+        startActivity(
+            Intent(applicationContext, PesanKamar::class.java)
+                .putExtra("intent_id", kamarId)
+                .putExtra("intent_type", intentType)
+        )
+    }
     fun intentEdit(kamarId: Int, intentType: Int){
         startActivity(
             Intent(applicationContext,EditKamar::class.java)

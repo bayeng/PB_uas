@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kamar">
+        <item>kamar 101</item>
+        <item>kamar 102</item>
+        <item>kamar 103</item>
+        <item>kamar 104</item>
+    </string-array>
+
+    <string-array name="Makanan">
+        <item>Sate</item>
+        <item>Lalapan</item>
+        <item>Mie</item>
+        <item>Capjay</item>
+    </string-array>
+
+    <string-array name="Minuman">
+        <item>Es Jeruk</item>
+        <item>Es Teh</item>
+        <item>Jus Jambu</item>
+
+    </string-array>
+</resources>

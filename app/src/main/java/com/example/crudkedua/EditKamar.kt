@@ -73,7 +73,7 @@ class EditKamar : AppCompatActivity() {
                     Food(edit_food.text.toString())
                 )
                 db.drinkDao().addDrink(
-                    Drink(edit_food.text.toString())
+                    Drink(edit_drink.text.toString())
                 )
                 finish()
             }
